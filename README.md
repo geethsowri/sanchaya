@@ -1,12 +1,74 @@
-# React + Vite
+# ReactJS Expense Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern expense tracking application built with React.js featuring data visualization, dark mode, and CSV export functionality.
 
-Currently, two official plugins are available:
+![React](https://img.shields.io/badge/React-18.2.0-blue?logo=react) ![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-3.3.0-blue?logo=tailwindcss)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- **CRUD Operations** - Add, edit, delete expenses with form validation
+- **Data Visualization** - Interactive charts showing spending patterns
+- **Smart Filtering** - Filter by category, date range, and amount
+- **Dark Mode** - Toggle between light and dark themes
+- **CSV Export** - Export expense data and reports
+- **Responsive Design** - Works on desktop and mobile
+- **Local Storage** - Data persists without backend
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tech Stack
+
+- React.js with Context API and Hooks
+- Tailwind CSS for styling
+- Recharts for data visualization
+- Lucide React for icons
+- Local Storage for data persistence
+
+## Installation
+
+```bash
+# Clone repository
+git clone https://github.com/yourusername/reactjs-expense-tracker.git
+cd reactjs-expense-tracker
+
+# Install dependencies
+npm install
+
+# Start development server
+npm start
+```
+
+## Dependencies
+
+```bash
+npm install recharts lucide-react
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+```
+
+## Usage
+
+1. **Add Expenses** - Click "Add Expense" and fill out the form
+2. **Filter Data** - Use filters to view specific categories or date ranges
+3. **View Analytics** - Check dashboard for spending insights and charts
+4. **Export Data** - Download CSV reports from the Reports section
+5. **Toggle Theme** - Switch between light/dark mode using the header button
+
+## Project Structure
+
+```
+src/
+├── components/     # React components
+├── contexts/       # Context providers
+├── hooks/          # Custom hooks
+└── utils/          # Constants and utilities
+```
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
+
+## License
+
+MIT License - see [LICENSE](LICENSE) file for details.
