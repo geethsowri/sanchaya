@@ -1,4 +1,4 @@
-# ReactJS Expense Tracker
+# Sanchaya — ReactJS Expense Tracker
 
 A modern expense tracking application built with React.js featuring data visualization, dark mode, and CSV export functionality.
 
