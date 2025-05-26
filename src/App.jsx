@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext, createContext } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
-import { Plus, Edit2, Trash2, Filter, Download, Moon, Sun, DollarSign, TrendingUp, Calendar, Tag } from 'lucide-react';
+import { Plus, Edit2, Trash2, Filter, Download, Moon, Sun, IndianRupee, TrendingUp, Calendar, Tag } from 'lucide-react';
 
 // Theme Context
 const ThemeContext = createContext();
@@ -160,7 +160,7 @@ const Header = ({ currentView, setCurrentView }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
-            <DollarSign className="h-8 w-8 text-blue-600 dark:text-blue-400" />
+            <IndianRupee className="h-8 w-8 text-blue-600 dark:text-blue-400" />
             <h1 className="ml-2 text-xl font-bold text-gray-900 dark:text-white">
               Sanchaya 
             </h1>
@@ -186,19 +186,9 @@ const Header = ({ currentView, setCurrentView }) => {
             <div className="text-right">
               <p className="text-sm text-gray-500 dark:text-gray-400">Total Spent</p>
               <p className="text-lg font-bold text-gray-900 dark:text-white">
-                ${totalExpenses.toFixed(2)}
+                ₹{totalExpenses.toFixed(2)}
               </p>
             </div>
-            <button
-              onClick={toggleTheme}
-              className="p-2 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-200"
-            >
-              {isDarkMode ? (
-                <Sun className="h-5 w-5 text-yellow-500" />
-              ) : (
-                <Moon className="h-5 w-5 text-gray-600" />
-              )}
-            </button>
           </div>
         </div>
       </div>
@@ -268,19 +258,19 @@ const Dashboard = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <StatsCard
           title="Total Expenses"
-          value={`$${expenses.reduce((sum, e) => sum + e.amount, 0).toFixed(2)}`}
-          icon={DollarSign}
+          value={`₹${expenses.reduce((sum, e) => sum + e.amount, 0).toFixed(2)}`}
+          icon={IndianRupee}
           color="blue"
         />
         <StatsCard
           title="This Month"
-          value={`$${totalThisMonth.toFixed(2)}`}
+          value={`₹${totalThisMonth.toFixed(2)}`}
           icon={Calendar}
           color="green"
         />
         <StatsCard
           title="This Year"
-          value={`$${totalThisYear.toFixed(2)}`}
+          value={`₹${totalThisYear.toFixed(2)}`}
           icon={TrendingUp}
           color="purple"
         />
@@ -302,7 +292,7 @@ const Dashboard = () => {
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="month" />
               <YAxis />
-              <Tooltip formatter={(value) => [`$${value.toFixed(2)}`, 'Amount']} />
+              <Tooltip formatter={(value) => [`₹${value.toFixed(2)}`, 'Amount']} />
               <Bar dataKey="amount" fill="#3B82F6" />
             </BarChart>
           </ResponsiveContainer>
@@ -329,7 +319,7 @@ const Dashboard = () => {
                     <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                   ))}
                 </Pie>
-                <Tooltip formatter={(value) => [`$${value.toFixed(2)}`, 'Amount']} />
+                <Tooltip formatter={(value) => [`₹${value.toFixed(2)}`, 'Amount']} />
               </PieChart>
             </ResponsiveContainer>
           ) : (
@@ -682,7 +672,7 @@ const ExpenseList = () => {
         <div className="overflow-x-auto">
           {filteredExpenses.length === 0 ? (
             <div className="p-12 text-center">
-              <DollarSign className="h-12 w-12 text-gray-400 mx-auto mb-4" />
+              <IndianRupee className="h-12 w-12 text-gray-400 mx-auto mb-4" />
               <p className="text-gray-500 dark:text-gray-400 text-lg">No expenses found</p>
               <p className="text-gray-400 dark:text-gray-500 text-sm">
                 Add your first expense to get started
@@ -725,7 +715,7 @@ const ExpenseList = () => {
                       </div>
                     </td>
                     <td className="px-6 py-4 text-sm font-medium text-gray-900 dark:text-white">
-                      ${expense.amount.toFixed(2)}
+                      ₹{expense.amount.toFixed(2)}
                     </td>
                     <td className="px-6 py-4">
                       <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200">
@@ -943,7 +933,7 @@ const Reports = () => {
                       {item.month}
                     </td>
                     <td className="px-4 py-3 text-sm text-gray-900 dark:text-white">
-                      ${item.total.toFixed(2)}
+                      ₹{item.total.toFixed(2)}
                     </td>
                     <td className="px-4 py-3 text-sm text-gray-900 dark:text-white">
                       {item.count}
@@ -984,7 +974,7 @@ const Reports = () => {
                       {item.category}
                     </td>
                     <td className="px-4 py-3 text-sm text-gray-900 dark:text-white">
-                      ${item.total.toFixed(2)}
+                      ₹{item.total.toFixed(2)}
                     </td>
                     <td className="px-4 py-3 text-sm text-gray-900 dark:text-white">
                       {item.percentage}%
