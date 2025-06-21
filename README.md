@@ -15,4 +15,4 @@ This project is a part of my **Internship at EiSystems Technologies.**
 - Access the dashboard to view spending analytics and charts.
 - Export data by downloading CSV reports from the Reports section.
 
-[Live Website ↗](https://sanchaya-kappa.vercel.app/)
+[Start using Sanchaya ↗](https://sanchaya-kappa.vercel.app/)
